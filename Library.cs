@@ -23,6 +23,17 @@ namespace SimpleLibrary
             books.Remove(books.Where(book => book.BookName.Equals(bookName)).First());
         }
 
+        public void ShowAllBooks()
+        {
+            Console.WriteLine("-------Books--------");
+            foreach (var book in books)
+            {
+                Console.WriteLine("BookName\t\tIsOwned"); //Headers
+                Console.WriteLine(book.BookName + "\t\t" + book.IsOwned); //information
+            }
+            Console.WriteLine("-------Books--------");
+        }
+
         //ReaderMethods
 
         public void ShowAllReaders()

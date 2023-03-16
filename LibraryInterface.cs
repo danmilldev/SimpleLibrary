@@ -60,6 +60,7 @@ namespace SimpleLibrary
                             library.ShowAllReaders();
                             break;
                         case 7:
+                            library.ShowAllBooks();
                             break;
                         case 10:
                             shouldMenuRunning = false;
