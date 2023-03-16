@@ -93,5 +93,30 @@ namespace SimpleLibrary
                 }
             }
         }
+
+        public void RemoveBookFromReader(string readerName,string bookName)
+        {
+            bool doesReaderExists = readers.Exists(read => read.ReaderName == readerName);
+            bool doesBookExists = books.Exists(book => book.BookName == bookName);
+
+            Console.WriteLine("Checked and going forward..." + "name exists?: " + doesReaderExists + "book exists?: " + doesBookExists);
+
+            if (doesReaderExists && doesBookExists)
+            {
+                var book = books.Where(boo => boo.BookName == bookName).First();
+
+                if (book.IsOwned == true)
+                {
+                    var reader = readers.Where(read => read.ReaderName == readerName).First();
+                    book.IsOwned = false;
+                    reader.Books.Remove(book);
+                    Console.WriteLine("Book Was succefully Removed from user.");
+                }
+                else
+                {
+                    Console.WriteLine("Book isn't borrowed.");
+                }
+            }
+        }
     }
 }

@@ -27,8 +27,9 @@ namespace SimpleLibrary
                 Console.WriteLine("\t3.Create Book.");
                 Console.WriteLine("\t4.Delete Book.");
                 Console.WriteLine("\t5.Add Book to User.");
-                Console.WriteLine("\t6.Show All Readers");
-                Console.WriteLine("\t7.Show All Books");
+                Console.WriteLine("\t6.Remove Book from User.");
+                Console.WriteLine("\t7.Show All Readers");
+                Console.WriteLine("\t8.Show All Books");
                 Console.WriteLine("\t10.Exit.");
 
                 Console.Write("Input:");
@@ -57,10 +58,13 @@ namespace SimpleLibrary
                             UseExtendedMethods(library.AddBookToReader);
                             break;
                         case 6:
+                            UseExtendedMethods(library.RemoveBookFromReader);
+                            break;
+                        case 7:
                             Console.Clear();
                             library.ShowAllReaders();
                             break;
-                        case 7:
+                        case 8:
                             library.ShowAllBooks();
                             break;
                         case 10:
