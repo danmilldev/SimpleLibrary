@@ -89,6 +89,7 @@ namespace SimpleLibrary
             inputString = Console.ReadLine().TrimEnd();
             method(inputString);
         }
+
         void UseExtendedMethods(Action<string,string> method)
         {
             Console.Clear();
