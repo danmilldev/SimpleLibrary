@@ -54,6 +54,7 @@ namespace SimpleLibrary
                             UseMethods("BookName", library.RemoveBook);
                             break;
                         case 5:
+                            UseExtendedMethods(library.AddBookToReader);
                             break;
                         case 6:
                             Console.Clear();
@@ -75,16 +76,31 @@ namespace SimpleLibrary
             }
         }
 
-        void UseMethods(string inputString,Action<string> method)
+        void UseMethods(string inputString, Action<string> method)
         {
             Console.Clear();
 
             string objectName = inputString;
             Console.Write(inputString + ": ");
-            inputString = Console.ReadLine();
+            inputString = Console.ReadLine().TrimEnd();
             method(inputString);
 
-            Console.WriteLine(objectName + " with name " + inputString +  " Successfully created.");
+            Console.WriteLine(objectName + " with name " + inputString + " Successfully created.");
+        }
+        void UseExtendedMethods(Action<string,string> method)
+        {
+            Console.Clear();
+
+            Console.Write("ReaderName: ");
+            string readerName = Console.ReadLine().TrimEnd();
+
+            Console.Write("BookName: ");
+            string bookName = Console.ReadLine().TrimEnd();
+
+            if(!String.IsNullOrEmpty(bookName) && !String.IsNullOrEmpty(readerName))
+            {
+                method(readerName, bookName);
+            }
         }
     }
 }
