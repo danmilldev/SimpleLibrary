@@ -84,8 +84,6 @@ namespace SimpleLibrary
             Console.Write(inputString + ": ");
             inputString = Console.ReadLine().TrimEnd();
             method(inputString);
-
-            Console.WriteLine(objectName + " with name " + inputString + " Successfully created.");
         }
         void UseExtendedMethods(Action<string,string> method)
         {

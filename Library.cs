@@ -17,11 +17,13 @@ namespace SimpleLibrary
         public void AddBook(string bookName)
         {
             books.Add(new Book(bookName));
+            Console.WriteLine(bookName + " was Successfully created.");
         }
 
         public void RemoveBook(string bookName)
         {
             books.Remove(books.Where(book => book.BookName.Equals(bookName)).First());
+            Console.WriteLine(bookName + " was Successfully removed.");
         }
 
         public void ShowAllBooks()
@@ -57,11 +59,13 @@ namespace SimpleLibrary
         public void CreateReader(string readerName)
         {
             readers.Add(new Reader(readerName));
+            Console.WriteLine(readerName + " was Successfully created.");
         }
 
         public void RemoveReader(string readerName)
         {
             readers.Remove(readers.Where(reader => reader.ReaderName.Equals(readerName)).First());
+            Console.WriteLine(readerName + " was Successfully removed.");
         }
 
         //Reader plus Book Methods
